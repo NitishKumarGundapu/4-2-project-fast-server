@@ -23,11 +23,6 @@ class message(BaseModel):
     lang: str
 
 
-@app.get("/translate")
-async def translate(msg: message):
-    result = translator.translate(msg.text,dest=msg.lang)
-    return result.text
-
 @app.get("/translater")
 async def translater(msg,lang):
     result = translator.translate(msg,dest=lang)
