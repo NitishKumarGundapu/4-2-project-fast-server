@@ -18,11 +18,6 @@ app.add_middleware(
 )
 
 
-class message(BaseModel):
-    text: str
-    lang: str
-
-
 @app.get("/translater")
 async def translater(msg,lang):
     result = translator.translate(msg,dest=lang)
